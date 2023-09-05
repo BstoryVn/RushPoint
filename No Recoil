@@ -1,0 +1,9 @@
+local RecoilHandler = require(Client.Helpers.RecoilHandler)
+RecoilHandler = GetModule(RecoilHandler)
+local a; a = hookfunction(RecoilHandler.AddRecoil, function(...) 
+    if _G.NoRecoil then
+        return
+    end
+    
+    return a(...)
+end)
